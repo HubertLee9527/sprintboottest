@@ -14,8 +14,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class CustVO {
 
 	@Id
-	@Column(name="custid")
-	private String custId;
+	@Column(name="cust_id")
+	private int custId;
+	@Column(name="cust_name")
+	private String custName;
 	@Column(name = "password")
 	private String password;
 	@Column(name="email")
@@ -23,10 +25,16 @@ public class CustVO {
 	@Column(name="birth")
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date birth;
-	public String getCustId() {
+	public int getCustId() {
 		return custId;
 	}
-	public void setCustId(String custId) {
+	public String getCustName() {
+		return custName;
+	}
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+	public void setCustId(int custId) {
 		this.custId = custId;
 	}
 	public String getPassword() {
